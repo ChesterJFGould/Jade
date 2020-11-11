@@ -1,0 +1,36 @@
+From cd9a3f3216add4edc0412006e5583d612f20e4bd Mon Sep 17 00:00:00 2001
+From: Techser <chestergould@protonmail.com>
+Date: Tue, 10 Nov 2020 18:45:42 -0800
+Subject: [PATCH] added include for config.gen.h
+
+---
+ config.def.h | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index a164193..1db83ce 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -1,4 +1,5 @@
+ /* See LICENSE file for copyright and license details. */
++#include "config.gen.h"
+ /* Default settings; can be overriden by command line. */
+ 
+ static int topbar           = 1;    /* -b:  whether bar is at top or bottom of screen */
+@@ -11,13 +12,3 @@ static int step             = 1;    /* -s:  minimum adjustment */
+ static int jump             = 10;   /* -j:  large adjustment */
+ static const char *prompt   = NULL; /* -p:  prompt to the left of slider */
+ static const char *special  = NULL; /* -z:  special text */
+-static const char *fonts[]  = {     /* -f:  font set */
+-	"monospace:size=10"
+-};
+-
+-static const char *colors[SchemeLast][2] = {
+-	/*                 fg         bg */
+-	[SchemePrompt] = { "#eeeeee", "#005577" },
+-	[SchemeSlider] = { "#eeeeee", "#222222" }, /* fg: extent labels, bg: slider beyond value */
+-	[SchemeValue]  = { "#eeeeee", "#005577" }, /* fg: value label, bg: slider up to value */
+-};
+-- 
+2.29.2
+

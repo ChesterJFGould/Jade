@@ -1,0 +1,37 @@
+From 441e9cf3ba2d27f55d3a39990c3ed5da4a5ec211 Mon Sep 17 00:00:00 2001
+From: Techser <chestergould@protonmail.com>
+Date: Tue, 10 Nov 2020 14:41:11 -0800
+Subject: [PATCH] removed variables that will be in config.gen.h
+
+---
+ config.def.h | 14 +-------------
+ 1 file changed, 1 insertion(+), 13 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 86b7e76..0713f82 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -1,19 +1,7 @@
+-static const char *background_color = "#3e3e3e";
+-static const char *border_color = "#ececec";
+-static const char *font_color = "#ececec";
+-static const char *font_pattern = "monospace:size=10";
+-static const unsigned line_spacing = 5;
+-static const unsigned int padding = 15;
+-
+-static const unsigned int width = 450;
+-static const unsigned int border_size = 2;
+-static const unsigned int pos_x = 30;
+-static const unsigned int pos_y = 60;
++#include "config.gen.h"
+ 
+ enum corners { TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT };
+ enum corners corner = TOP_RIGHT;
+ 
+-static const unsigned int duration = 5; /* in seconds */
+-
+ #define DISMISS_BUTTON Button1
+ #define ACTION_BUTTON Button3
+-- 
+2.29.2
+

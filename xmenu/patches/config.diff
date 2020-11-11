@@ -1,0 +1,71 @@
+From 99898cf0f98dca3443c3edbcef3a8a2747fd8c54 Mon Sep 17 00:00:00 2001
+From: Techser <chestergould@protonmail.com>
+Date: Tue, 10 Nov 2020 19:10:46 -0800
+Subject: [PATCH] added include for config.gen.h and made config depend on it
+
+---
+ config.h | 34 ++++++++++++++++++----------------
+ 1 file changed, 18 insertions(+), 16 deletions(-)
+
+diff --git a/config.h b/config.h
+index 0723fcd..38b2754 100644
+--- a/config.h
++++ b/config.h
+@@ -1,21 +1,23 @@
++#include "config.gen.h"
++
+ static struct Config config = {
+ 	/* font, separate different fonts with comma */
+-	.font = "monospace:size=9,DejaVuSansMono:size=9",
++	.font = FONT,
+ 
+ 	/* colors */
+-	.background_color = "#FFFFFF",
+-	.foreground_color = "#2E3436",
+-	.selbackground_color = "#3584E4",
+-	.selforeground_color = "#FFFFFF",
+-	.separator_color = "#CDC7C2",
+-	.border_color = "#E6E6E6",
++	.background_color = NORM_BG_COLOR,
++	.foreground_color = NORM_FG_COLOR,
++	.selbackground_color = SEL_BG_COLOR,
++	.selforeground_color = SEL_FG_COLOR,
++	.separator_color = NORM_FG_COLOR,
++	.border_color = NORM_FG_COLOR,
+ 
+ 	/* sizes in pixels */
+-	.width_pixels = 130,        /* minimum width of a menu */
+-	.height_pixels = 25,        /* height of a single menu item */
+-	.border_pixels = 1,         /* menu border */
+-	.separator_pixels = 3,      /* space around separator */
+-	.gap_pixels = 0,            /* gap between menus */
++	.width_pixels = MIN_WIDTH,        /* minimum width of a menu */
++	.height_pixels = ENTRY_HEIGHT,        /* height of a single menu item */
++	.border_pixels = BORDER_WIDTH,         /* menu border */
++	.separator_pixels = SEPARATOR_WIDTH,      /* space around separator */
++	.gap_pixels = MENU_GAP,            /* gap between menus */
+ 
+ 	/*
+ 	 * The variables below cannot be set by X resources.
+@@ -23,14 +25,14 @@ static struct Config config = {
+ 	 */
+ 
+ 	/* geometry of the right-pointing isoceles triangle for submenus */
+-	.triangle_width = 3,
+-	.triangle_height = 7,
++	.triangle_width = TRIANGLE_WIDTH,
++	.triangle_height = TRIANGLE_HEIGHT,
+ 
+ 	/* the icon size is equal to .height_pixels - .iconpadding * 2 */
+-	.iconpadding = 2,
++	.iconpadding = ICON_PADDING,
+ 
+ 	/* area around the icon, the triangle and the separator */
+-	.horzpadding = 8,
++	.horzpadding = HORIZONTAL_PADDING,
+ };
+ 
+ /*
+-- 
+2.29.2
+

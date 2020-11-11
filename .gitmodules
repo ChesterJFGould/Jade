@@ -1,0 +1,21 @@
+[submodule "st/src"]
+	path = st/src
+	url = https://git.suckless.org/st
+[submodule "wjt/src"]
+	path = wjt/src
+	url = https://github.com/ianremmler/wjt.git
+[submodule "xmenu/src"]
+	path = xmenu/src
+	url = https://github.com/phillbush/xmenu.git
+[submodule "dmenu/src"]
+	path = dmenu/src
+	url = https://git.suckless.org/dmenu
+[submodule "herbe/src"]
+	path = herbe/src
+	url = https://github.com/dudik/herbe.git
+[submodule "tiramisu/src"]
+	path = tiramisu/src
+	url = https://github.com/Sweets/tiramisu.git
+[submodule "lemonbar/src"]
+	path = lemonbar/src
+	url = https://github.com/drscream/lemonbar-xft.git

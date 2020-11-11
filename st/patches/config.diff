@@ -1,0 +1,75 @@
+From 852e0d6acbe2fbc04cc2ed1321e1d8993332a9f9 Mon Sep 17 00:00:00 2001
+From: Techser <chestergould@protonmail.com>
+Date: Tue, 10 Nov 2020 18:18:45 -0800
+Subject: [PATCH] added include for config.gen.h and removed values that will
+ be in config.gen.h
+
+---
+ config.def.h | 39 +--------------------------------------
+ 1 file changed, 1 insertion(+), 38 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 6f05dce..de7bb30 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -1,12 +1,11 @@
+ /* See LICENSE file for copyright and license details. */
++#include "config.gen.h"
+ 
+ /*
+  * appearance
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+-static int borderpx = 2;
+ 
+ /*
+  * What program is execed by st depends of these precedence rules:
+@@ -94,43 +93,7 @@ char *termname = "st-256color";
+ unsigned int tabspaces = 8;
+ 
+ /* Terminal colors (16 first used in escape sequence) */
+-static const char *colorname[] = {
+-	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
+ 
+-	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
+-
+-	[255] = 0,
+-
+-	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-};
+-
+-
+-/*
+- * Default colors (colorname index)
+- * foreground, background, cursor, reverse cursor
+- */
+-unsigned int defaultfg = 7;
+-unsigned int defaultbg = 0;
+-static unsigned int defaultcs = 256;
+-static unsigned int defaultrcs = 257;
+ 
+ /*
+  * Default shape of cursor
+-- 
+2.29.2
+

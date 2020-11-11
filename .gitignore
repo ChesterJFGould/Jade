@@ -1,0 +1,12 @@
+*
+!*/
+
+!*.gitignore
+!*.sh
+!*/*.sh
+!*/*/*.diff
+!bin/askpass
+!*.md
+!*/*.md
+!*/config
+!*/*/src/

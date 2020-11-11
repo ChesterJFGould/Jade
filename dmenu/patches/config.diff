@@ -1,0 +1,37 @@
+From 3390543c7603a3f96e8a9dff383f79b2f7d8d5a5 Mon Sep 17 00:00:00 2001
+From: Techser <chestergould@protonmail.com>
+Date: Tue, 10 Nov 2020 18:27:29 -0800
+Subject: [PATCH] added include for config.gen.h and removed values that will
+ appear there
+
+---
+ config.def.h | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 1edb647..55a2527 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -1,18 +1,10 @@
+ /* See LICENSE file for copyright and license details. */
++#include "config.gen.h"
+ /* Default settings; can be overriden by command line. */
+ 
+ static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
+ /* -fn option overrides fonts[0]; default X11 font or font set */
+-static const char *fonts[] = {
+-	"monospace:size=10"
+-};
+ static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+-static const char *colors[SchemeLast][2] = {
+-	/*     fg         bg       */
+-	[SchemeNorm] = { "#bbbbbb", "#222222" },
+-	[SchemeSel] = { "#eeeeee", "#005577" },
+-	[SchemeOut] = { "#000000", "#00ffff" },
+-};
+ /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
+ static unsigned int lines      = 0;
+ 
+-- 
+2.29.2
+

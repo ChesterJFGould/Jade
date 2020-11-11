@@ -1,0 +1,10 @@
+font LiterationMono Nerd Font:pixelsize=14:antialias=true:autohint=true
+border_width 2
+menu_gap 0
+entry_height 25
+separator_width 10
+min_width 130
+icon_padding 2
+horizontal_padding 8
+triangle_width 3
+triangle_height 7
