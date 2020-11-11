@@ -10,3 +10,5 @@
 !*/*.md
 !*/config
 !*/*/src/
+!*/*rc
+!berry/autostart

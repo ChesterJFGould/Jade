@@ -1,0 +1,14 @@
+super + w
+	berryc window_close
+
+super + f
+	berryc fullscreen_state
+
+super + t
+	berryc window_monocle
+
+super + {_,shift +}{1-9,0}
+	berryc {switch_workspace,send_to_workspace} {1-9,0}
+
+super + {h,j,k,l}
+	berryc cardinal_focus {1,2,3,4}

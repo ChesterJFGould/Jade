@@ -19,11 +19,12 @@ export SUDO_ASKPASS=$workingPath/bin/askpass
 #########
 # Pywal #
 #########
-wal -i $workingPath/wallpapers
+wal -i $workingPath/wallpaper
 (cd $workingPath
 if [ -f .wallpapermd5 ]; then
 	md5sum --check .wallpapermd5 || ./build.sh
 else
+	md5sum wallpaper > .wallpapermd5
 	./build.sh
 fi)
 

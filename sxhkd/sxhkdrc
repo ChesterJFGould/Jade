@@ -1,0 +1,16 @@
+super + Return
+	st
+
+super + v
+	pamixer --get-volume | \
+	xargs -I? wjt -x ? | \
+	xargs -I? pamixer --set-volume ?
+
+super + d
+	dmenu_run
+
+super + n
+	networkmanager_dmenu
+
+super + alt + q
+	delogout

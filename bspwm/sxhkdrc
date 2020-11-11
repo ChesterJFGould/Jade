@@ -1,0 +1,16 @@
+# Quit or restart BSPWM
+# Set the focused window state
+super + {t, shift + t, s, f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Move the focus or move the window in the given direction
+super + {_,shift +}{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Focus or send the focused window to the given desktop
+super + {_,shift +}{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9, 10}'
+ 
+# Close or kill the focused window
+super + {_,shift +}w
+	bspc node -{c,k}
